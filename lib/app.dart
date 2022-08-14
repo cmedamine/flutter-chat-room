@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_room/src/pages/join_room_page.dart';
+import '../src/pages/join_room_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class App extends StatelessWidget {
@@ -18,7 +18,7 @@ class App extends StatelessWidget {
         ),
         colorScheme: const ColorScheme.dark(),
       ),
-      home: const JoinRoomPage(),
+      home: const JoinRoomPage()
     );
   }
 }

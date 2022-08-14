@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_room/src/pages/chat_room_page.dart';
 
 class RoomFormWidget extends StatefulWidget {
   const RoomFormWidget({Key? key}) : super(key: key);
@@ -29,24 +30,15 @@ class _RoomFormWidgetState extends State<RoomFormWidget> {
 
   @override
   Widget build(BuildContext context) {
-    
-
     return Card(
       elevation: 8,
       child: Container(
         constraints: BoxConstraints(
-          minWidth: w * .8,
-          maxWidth: w,
-          minHeight: h * .8,
-          maxHeight: h
-        ),
-        
+            minWidth: w * .8, maxWidth: w, minHeight: h * .8, maxHeight: h),
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 50),
-       
         decoration: BoxDecoration(
           color: Colors.indigo[900],
           borderRadius: BorderRadius.circular(4),
-          
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -91,11 +83,18 @@ class _RoomFormWidgetState extends State<RoomFormWidget> {
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
               ),
-                onPressed: () {},
-                child: Text(
-                  'Join Room',
-                  style: Theme.of(context).textTheme.headline6,
-                ))
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (builder) => const ChatRoomPage(),
+                  ),
+                );
+              },
+              child: Text(
+                'Join Room',
+                style: Theme.of(context).textTheme.headline6,
+              ),
+            )
           ],
         ),
       ),

@@ -7,7 +7,9 @@ class JoinRoomPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child:RoomFormWidget()),
+      body: Center(
+        child: RoomFormWidget(),
+      ),
     );
   }
 }
